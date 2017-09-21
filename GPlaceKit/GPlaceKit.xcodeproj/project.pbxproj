@@ -13,6 +13,8 @@
 		215B79281F7339CD0012D944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215B79271F7339CD0012D944 /* Assets.xcassets */; };
 		215B792B1F7339CD0012D944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215B79291F7339CD0012D944 /* LaunchScreen.storyboard */; };
 		215B79361F7339CD0012D944 /* GPlaceKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79351F7339CD0012D944 /* GPlaceKitTests.swift */; };
+		215B79471F73615D0012D944 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79461F73615D0012D944 /* HTTPService.swift */; };
+		215B79481F73615D0012D944 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79461F73615D0012D944 /* HTTPService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		215B791D1F7339CD0012D944 /* GPlaceKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPlaceKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		215B79201F7339CD0012D944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		215B79221F7339CD0012D944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		215B79221F7339CD0012D944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
 		215B79251F7339CD0012D944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		215B79271F7339CD0012D944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		215B792A1F7339CD0012D944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,7 @@
 		215B79311F7339CD0012D944 /* GPlaceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPlaceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		215B79351F7339CD0012D944 /* GPlaceKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPlaceKitTests.swift; sourceTree = "<group>"; };
 		215B79371F7339CD0012D944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		215B79461F73615D0012D944 /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +80,10 @@
 		215B791F1F7339CD0012D944 /* GPlaceKit */ = {
 			isa = PBXGroup;
 			children = (
+				215B79431F73611B0012D944 /* View */,
+				215B79411F7360FE0012D944 /* Model */,
+				215B79421F7360FE0012D944 /* Service */,
 				215B79201F7339CD0012D944 /* AppDelegate.swift */,
-				215B79221F7339CD0012D944 /* ViewController.swift */,
 				215B79241F7339CD0012D944 /* Main.storyboard */,
 				215B79271F7339CD0012D944 /* Assets.xcassets */,
 				215B79291F7339CD0012D944 /* LaunchScreen.storyboard */,
@@ -94,6 +99,45 @@
 				215B79371F7339CD0012D944 /* Info.plist */,
 			);
 			path = GPlaceKitTests;
+			sourceTree = "<group>";
+		};
+		215B79411F7360FE0012D944 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		215B79421F7360FE0012D944 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				215B79461F73615D0012D944 /* HTTPService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		215B79431F73611B0012D944 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				215B79441F7361330012D944 /* Cell */,
+				215B79451F7361330012D944 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		215B79441F7361330012D944 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		215B79451F7361330012D944 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				215B79221F7339CD0012D944 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215B79471F73615D0012D944 /* HTTPService.swift in Sources */,
 				215B79231F7339CD0012D944 /* ViewController.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
 			);
@@ -209,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				215B79361F7339CD0012D944 /* GPlaceKitTests.swift in Sources */,
+				215B79481F73615D0012D944 /* HTTPService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
