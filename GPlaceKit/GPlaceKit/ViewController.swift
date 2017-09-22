@@ -68,6 +68,7 @@ extension ViewController: UISearchBarDelegate {
             
             textSearchViewModel.requestTextSearchItems(searchable: searchString!, completionHandler: {
                 DispatchQueue.main.async {
+                    self.tableView.setContentOffset(CGPoint.zero, animated: false)
                     self.tableView.reloadData()
                 }
             }) { (error) in

@@ -22,8 +22,6 @@ class SearchListTableViewCell: UITableViewCell {
             
             name.text = item.name
             addr.text = item.addr
-            
-            // TODO: Array -> String
             types.text = item.types.description
         }
     }

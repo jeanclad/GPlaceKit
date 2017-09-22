@@ -11,8 +11,6 @@ import UIKit
 internal class SearchResult: NSObject {
     internal let name: String
     internal let addr: String
-    
-    // TODO: get 프로퍼티에서 Array -> String으로 구현해볼것
     internal var types: [String]
     
     init(name: String, addr: String, types: [String]) {
@@ -30,12 +28,12 @@ internal class TextSearchModel: NSObject {
     }
     
     init(searchResults: NSArray) {
-        for dic in searchResults {
-            let result = dic as? NSDictionary
-            let searchResult = SearchResult.init(name: result?["name"] as! String,
-                                                 addr: result?["formatted_address"] as! String,
-                                                 types: result?["types"] as! Array)
-            self.searchResults.append(searchResult)            
-        }
+        self.searchResults = searchResults.map { (result: Any) -> SearchResult in
+            let dic = result as? NSDictionary
+            let searchResult = SearchResult.init(name: dic?["name"] as! String,
+                                       addr: dic?["formatted_address"] as! String,
+                                       types: dic?["types"] as! Array)
+            return searchResult
+        }        
     }
 }
