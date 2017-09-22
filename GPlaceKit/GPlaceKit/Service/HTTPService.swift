@@ -35,7 +35,7 @@ public struct Response {
     }
 }
 
-fileprivate class HTTPService: NSObject {
+internal class HTTPService: NSObject {
     static let shared = HTTPService()
     
     fileprivate func request(url: URL,
@@ -57,30 +57,20 @@ fileprivate class HTTPService: NSObject {
                 return
             }
             
-            if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                    print("Error: JSON Deserialized")
-                    let error = NSError(domain: NSURLErrorDomain,
-                                        code: StatusCode.CanNotDeserializedJSON.rawValue,
-                                        userInfo: nil)
-                    
-                    failure(error)
-                    return
-                }
-                
-                let response = Response(response: response, data: data)
+            if let httpResponse = response as? HTTPURLResponse {
+                let response = Response(response: httpResponse, data: data)
                 completion(response)
                 return
             }
             
-            let response = response as? HTTPURLResponse
             let error = NSError(domain: NSURLErrorDomain,
-                                code: NSURLErrorUnknown,
-                                userInfo: ["statusCode" : response?.statusCode ?? StatusCode.NotKwonResponse.rawValue])
+                                code: StatusCode.NotFoundURL.rawValue,
+                                userInfo: nil)
             
             failure(error)
             return
         }
+        
         task.resume()
     }
     
@@ -99,7 +89,7 @@ fileprivate class HTTPService: NSObject {
         }
         
         request(url: url, method: .GET, completion: { (response) in
-            
+            completion(response)
         }) { (error) in
             failure(error)
         }

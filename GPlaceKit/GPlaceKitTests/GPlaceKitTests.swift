@@ -11,6 +11,8 @@ import XCTest
 
 class GPlaceKitTests: XCTestCase {
     
+    let waitTimeout: TimeInterval = 60
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,6 +21,39 @@ class GPlaceKitTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testFetchGETWithJson() {
+        let expectation = self.expectation(description: "HTTPLite-Request")
+        
+        let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=플레이뮤지엄&language=ko&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
+        let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        HTTPService.shared.fetchGET(urlString: encoded_url!, completion: { (response) in
+            if let data = response.data {
+                do {
+                    let JSON = try JSONSerialization.jsonObject(with: data,
+                                                                options: .mutableContainers)
+                    print("Data received : \(JSON)")
+                    
+                } catch let error {
+                    XCTFail(error.localizedDescription)
+                }
+            }
+            
+            if let url = response.url {
+                print("File download finished: \(url)")
+            }
+            
+            expectation.fulfill()
+        }) { (error) in
+            print("error happend in failure closure")
+            XCTFail("error: \(error.localizedDescription )")
+        }
+        
+        waitForExpectations(timeout: waitTimeout) { error in
+            print("timedout after \(self.waitTimeout) with error:\(error?.localizedDescription ?? "")")
+        }
     }
     
     func testExample() {
