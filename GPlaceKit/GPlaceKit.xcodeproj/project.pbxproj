@@ -80,6 +80,7 @@
 		215B791F1F7339CD0012D944 /* GPlaceKit */ = {
 			isa = PBXGroup;
 			children = (
+				215DCADE1F7495470032CE39 /* ViewModel */,
 				215B79431F73611B0012D944 /* View */,
 				215B79411F7360FE0012D944 /* Model */,
 				215B79421F7360FE0012D944 /* Service */,
@@ -138,6 +139,13 @@
 				215B79221F7339CD0012D944 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		215DCADE1F7495470032CE39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +462,7 @@
 				215B793C1F7339CD0012D944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		215B793D1F7339CD0012D944 /* Build configuration list for PBXNativeTarget "GPlaceKitTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +471,7 @@
 				215B793F1F7339CD0012D944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

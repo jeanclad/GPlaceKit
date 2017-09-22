@@ -16,6 +16,13 @@ fileprivate enum HTTPMethod: String {
     case POST = "POST"
 }
 
+fileprivate enum StatusCode: Int {
+    // MARK: 9xx codes
+    case NotFoundURL                = 999
+    case CanNotDeserializedJSON     = 998
+    case NotKwonResponse            = 997
+}
+
 public struct Response {
     public let response: HTTPURLResponse
     public let data: Data?
@@ -32,35 +39,46 @@ fileprivate class HTTPService: NSObject {
     static let shared = HTTPService()
     
     fileprivate func request(url: URL,
+                             params: [String: String]? = nil,
                              method: HTTPMethod,
                              completion: @escaping successClosure,
                              failure: @escaping failureClosure) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
-        // TODO: POST의 header를 파라미터로 받아서 처리하도록
-        
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task = session.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
                 print("Error occured: \(String(describing: error))")
-                completion(nil)
+                let error = NSError(domain: NSURLErrorDomain,
+                                    code: StatusCode.NotFoundURL.rawValue,
+                                    userInfo: nil)
+                failure(error)
                 return
             }
             
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
                     print("Error: JSON Deserialized")
-                    completion(nil)
+                    let error = NSError(domain: NSURLErrorDomain,
+                                        code: StatusCode.CanNotDeserializedJSON.rawValue,
+                                        userInfo: nil)
+                    
+                    failure(error)
                     return
                 }
                 
-                let chart = json?.value(forKeyPath: "feed.entry") as? [NSDictionary]
-                completion(chart)
+                let response = Response(response: response, data: data)
+                completion(response)
                 return
             }
             
-            completion(nil)
+            let response = response as? HTTPURLResponse
+            let error = NSError(domain: NSURLErrorDomain,
+                                code: NSURLErrorUnknown,
+                                userInfo: ["statusCode" : response?.statusCode ?? StatusCode.NotKwonResponse.rawValue])
+            
+            failure(error)
             return
         }
         task.resume()
@@ -73,7 +91,7 @@ fileprivate class HTTPService: NSObject {
         guard let url = URL(string: urlString) else {
             print("URL is nil")
             let error = NSError(domain: NSURLErrorDomain,
-                                code: -999,
+                                code: StatusCode.NotFoundURL.rawValue,
                                 userInfo: nil)
             
             failure(error)
@@ -83,12 +101,29 @@ fileprivate class HTTPService: NSObject {
         request(url: url, method: .GET, completion: { (response) in
             
         }) { (error) in
-            let error = NSError(domain: NSURLErrorDomain,
-                                code: NSURLErrorUnknown,
-                                userInfo: ["statusCode" : httpResponse.statusCode])
             failure(error)
         }
     }
     
+    // TOOD: 차후 확장
+    internal func fetchPOST(urlString: String,
+                            params: [String: String],
+                            completion: @escaping successClosure,
+                            failure: @escaping failureClosure) {
+        
+    }
     
+    // TOOD: 차후 확장
+    internal func fetchPUT(urlString: String,
+                           completion: @escaping successClosure,
+                           failure: @escaping failureClosure) {
+        
+    }
+    
+    // TOOD: 차후 확장
+    internal func fetchDELETE(urlString: String,
+                              completion: @escaping successClosure,
+                              failure: @escaping failureClosure) {
+        
+    }
 }
