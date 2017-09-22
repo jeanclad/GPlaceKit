@@ -9,17 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
+    
+    fileprivate var textSearchViewModel = TextSearchViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        textSearchViewModel.requestTextSearchItems(searchable: "플레이뮤지엄", completionHandler: { 
+            // test by jeanclad
+            print(" aa ", self.textSearchViewModel.numberOfItem)
+        }) { (error) in
+            
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 

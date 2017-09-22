@@ -17,10 +17,12 @@ fileprivate enum HTTPMethod: String {
 }
 
 fileprivate enum StatusCode: Int {
+    // MARK: 2xx codes
+    case OK                         = 200
+    
     // MARK: 9xx codes
     case NotFoundURL                = 999
-    case CanNotDeserializedJSON     = 998
-    case NotKwonResponse            = 997
+    case NotKwonResponse            = 998
 }
 
 public struct Response {
@@ -58,15 +60,23 @@ internal class HTTPService: NSObject {
             }
             
             if let httpResponse = response as? HTTPURLResponse {
-                let response = Response(response: httpResponse, data: data)
-                completion(response)
+                if httpResponse.statusCode == StatusCode.OK.rawValue {
+                    let result = Response(response: httpResponse, data: data, url: response?.url)
+                    completion(result)
+                    return
+                }
+                
+                let error = NSError(domain: NSURLErrorDomain,
+                                    code: NSURLErrorUnknown,
+                                    userInfo: ["statusCode" : httpResponse.statusCode])
+                
+                failure(error)
                 return
             }
             
             let error = NSError(domain: NSURLErrorDomain,
-                                code: StatusCode.NotFoundURL.rawValue,
+                                code: StatusCode.NotKwonResponse.rawValue,
                                 userInfo: nil)
-            
             failure(error)
             return
         }

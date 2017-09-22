@@ -15,6 +15,8 @@
 		215B79361F7339CD0012D944 /* GPlaceKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79351F7339CD0012D944 /* GPlaceKitTests.swift */; };
 		215B79471F73615D0012D944 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79461F73615D0012D944 /* HTTPService.swift */; };
 		215B79481F73615D0012D944 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79461F73615D0012D944 /* HTTPService.swift */; };
+		215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCADF1F74C4010032CE39 /* TextSearchModel.swift */; };
+		215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		215B79351F7339CD0012D944 /* GPlaceKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPlaceKitTests.swift; sourceTree = "<group>"; };
 		215B79371F7339CD0012D944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		215B79461F73615D0012D944 /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		215DCADF1F74C4010032CE39 /* TextSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchModel.swift; sourceTree = "<group>"; };
+		215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +84,9 @@
 		215B791F1F7339CD0012D944 /* GPlaceKit */ = {
 			isa = PBXGroup;
 			children = (
+				215B79411F7360FE0012D944 /* Model */,
 				215DCADE1F7495470032CE39 /* ViewModel */,
 				215B79431F73611B0012D944 /* View */,
-				215B79411F7360FE0012D944 /* Model */,
 				215B79421F7360FE0012D944 /* Service */,
 				215B79201F7339CD0012D944 /* AppDelegate.swift */,
 				215B79241F7339CD0012D944 /* Main.storyboard */,
@@ -105,6 +109,7 @@
 		215B79411F7360FE0012D944 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				215DCADF1F74C4010032CE39 /* TextSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 		215DCADE1F7495470032CE39 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */,
+				215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */,
 				215B79471F73615D0012D944 /* HTTPService.swift in Sources */,
 				215B79231F7339CD0012D944 /* ViewController.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,

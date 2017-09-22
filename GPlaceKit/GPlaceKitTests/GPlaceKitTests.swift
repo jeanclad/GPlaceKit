@@ -42,7 +42,7 @@ class GPlaceKitTests: XCTestCase {
             }
             
             if let url = response.url {
-                print("File download finished: \(url)")
+                print("response finished: \(url)")
             }
             
             expectation.fulfill()
