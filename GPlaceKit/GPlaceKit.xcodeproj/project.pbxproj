@@ -17,6 +17,7 @@
 		215B79481F73615D0012D944 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79461F73615D0012D944 /* HTTPService.swift */; };
 		215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCADF1F74C4010032CE39 /* TextSearchModel.swift */; };
 		215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */; };
+		215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		215B79461F73615D0012D944 /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		215DCADF1F74C4010032CE39 /* TextSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchModel.swift; sourceTree = "<group>"; };
 		215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchViewModel.swift; sourceTree = "<group>"; };
+		215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		215B79441F7361330012D944 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */,
 				215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */,
 				215B79471F73615D0012D944 /* HTTPService.swift in Sources */,
+				215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */,
 				215B79231F7339CD0012D944 /* ViewController.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
 			);

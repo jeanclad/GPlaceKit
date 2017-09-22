@@ -26,6 +26,7 @@ internal class TextSearchViewModel: NSObject {
                         return
                     }
                     
+                    // TODO: Swift Collection Type으로 구현 가능한가?
                     for dic in (json?["results"] as? NSArray)! {
                         let result = dic as? NSDictionary
                         print(dic)
@@ -37,12 +38,32 @@ internal class TextSearchViewModel: NSObject {
                     }
                     
                     completionHandler()
+                    return
                 }
             }) { (error) in
                 failResponse(error)
+                return
             }
         } else {
             // TODO: Alert(Something wrong)
         }
     }
+    
+    internal func clearModel() {
+        textSearchModel = []
+    }
+    
+//    internal func nameForItemAtIndexPath(indexPath: IndexPath) -> String {
+//        return textSearchModel[indexPath.row].name
+//    }
+//    
+//    internal func addrForItemAtIndexPath(indexPath: IndexPath) -> String {
+//        return textSearchModel[indexPath.row].addr
+//    }
+//
+//    internal func typesForItemAtIndexPath(indexPath: IndexPath) -> String {
+//        return textSearchModel[indexPath.row].types.description
+//    }
 }
+
+

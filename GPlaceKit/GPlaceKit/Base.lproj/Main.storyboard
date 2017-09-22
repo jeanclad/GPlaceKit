@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,23 +21,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-yB-o41">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="e2G-RC-KAz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S61-tB-aYV"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-yB-o41">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" id="JE4-eB-afg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="104" id="9k2-pt-A3Z" customClass="SearchListTableViewCell" customModule="GPlaceKit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9k2-pt-A3Z" id="yXI-2m-S3F">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWZ-N2-d7r">
+                                                    <rect key="frame" x="8" y="24" width="359" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wj-lX-JvR">
+                                                    <rect key="frame" x="8" y="49" width="359" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-aC-ihL">
+                                                    <rect key="frame" x="8" y="75" width="359" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dWZ-N2-d7r" firstAttribute="trailing" secondItem="yXI-2m-S3F" secondAttribute="trailingMargin" id="5g6-LK-knJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="2wj-lX-JvR" secondAttribute="trailing" constant="8" id="E6q-MJ-51j"/>
+                                                <constraint firstAttribute="bottom" secondItem="lR4-aC-ihL" secondAttribute="bottom" constant="12" id="EbS-yt-nkO"/>
+                                                <constraint firstItem="2wj-lX-JvR" firstAttribute="top" secondItem="dWZ-N2-d7r" secondAttribute="bottom" constant="8" id="WvO-eO-r91"/>
+                                                <constraint firstItem="lR4-aC-ihL" firstAttribute="top" secondItem="2wj-lX-JvR" secondAttribute="bottom" constant="9" id="j6h-WS-8zJ"/>
+                                                <constraint firstItem="lR4-aC-ihL" firstAttribute="leading" secondItem="yXI-2m-S3F" secondAttribute="leading" constant="8" id="rMm-Ju-1Sr"/>
+                                                <constraint firstItem="dWZ-N2-d7r" firstAttribute="leading" secondItem="yXI-2m-S3F" secondAttribute="leadingMargin" id="roE-AA-h9d"/>
+                                                <constraint firstItem="2wj-lX-JvR" firstAttribute="leading" secondItem="yXI-2m-S3F" secondAttribute="leading" constant="8" id="uBv-6r-KYb"/>
+                                                <constraint firstAttribute="trailing" secondItem="lR4-aC-ihL" secondAttribute="trailing" constant="8" id="vV8-5I-VgW"/>
+                                                <constraint firstItem="dWZ-N2-d7r" firstAttribute="top" secondItem="yXI-2m-S3F" secondAttribute="topMargin" constant="16" id="zQz-bU-ZuT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addr" destination="2wj-lX-JvR" id="jSA-Da-Luw"/>
+                                            <outlet property="name" destination="dWZ-N2-d7r" id="Eh1-CE-xEz"/>
+                                            <outlet property="types" destination="lR4-aC-ihL" id="86k-fe-Duq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KqA-aW-lq5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jLs-pQ-0L1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="e2G-RC-KAz" secondAttribute="trailing" id="1lC-a2-Zqd"/>
+                            <constraint firstItem="e2G-RC-KAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VOK-hO-7pD"/>
+                            <constraint firstItem="e2G-RC-KAz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cBB-g1-7q9"/>
+                            <constraint firstItem="Hkc-yB-o41" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h3J-hI-2sQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Hkc-yB-o41" secondAttribute="trailing" id="j70-kq-tgh"/>
+                            <constraint firstItem="Hkc-yB-o41" firstAttribute="top" secondItem="e2G-RC-KAz" secondAttribute="bottom" id="rDv-gc-yHT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hkc-yB-o41" secondAttribute="bottom" id="zI6-9r-VxV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="장소 검색" id="JPI-6g-DjV"/>
                     <connections>
-                        <outlet property="searchBar" destination="JE4-eB-afg" id="nsa-Yu-v3p"/>
-                        <outlet property="searchDisplayController" destination="2ZO-XX-PDX" id="eTN-83-B5K"/>
+                        <outlet property="searchBar" destination="e2G-RC-KAz" id="W3a-xi-JSJ"/>
+                        <outlet property="searchDisplayController" destination="p5L-fv-SCe" id="xSy-yb-EJR"/>
                         <outlet property="tableView" destination="Hkc-yB-o41" id="Dr5-Kq-L3b"/>
                     </connections>
                 </viewController>
@@ -52,10 +114,17 @@
                 <searchDisplayController id="2ZO-XX-PDX">
                     <connections>
                         <outlet property="delegate" destination="BYZ-38-t0r" id="drI-xJ-ge7"/>
-                        <outlet property="searchBar" destination="JE4-eB-afg" id="nTF-XB-9eE"/>
                         <outlet property="searchContentsController" destination="BYZ-38-t0r" id="wDT-fN-eMy"/>
                         <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="vEo-OJ-SH5"/>
                         <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Rii-mf-UXt"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="p5L-fv-SCe">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="qpv-wn-4qn"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="0Xp-ni-0xn"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="mo6-p0-02A"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="TsH-pf-C7B"/>
                     </connections>
                 </searchDisplayController>
             </objects>
