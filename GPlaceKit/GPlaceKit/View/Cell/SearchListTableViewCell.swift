@@ -14,7 +14,7 @@ class SearchListTableViewCell: UITableViewCell {
     @IBOutlet fileprivate var addr: UILabel!
     @IBOutlet fileprivate var types: UILabel!
     
-    internal var item: TextSearchModel? {
+    internal var item: SearchResult? {
         didSet {
             guard let item = item else {
                 return

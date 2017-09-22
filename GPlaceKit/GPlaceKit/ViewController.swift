@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+internal class ViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet fileprivate var tableView: UITableView!
+    @IBOutlet fileprivate var searchBar: UISearchBar!
     
     fileprivate var textSearchViewModel = TextSearchViewModel()
     
@@ -26,6 +26,16 @@ class ViewController: UIViewController {
         
         searchBar.becomeFirstResponder()
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController", let destination = segue.destination as? DetailViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+//                let appId = chartViewModel.chartModel?.feed?.entries?[indexPath.row].appId?.idAttr?.imId
+//                destination.detailViewModel.appId = appId
+            }
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -35,7 +45,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! SearchListTableViewCell
         
-        cell.item = textSearchViewModel.textSearchModel[indexPath.row]
+        cell.item = textSearchViewModel.textSearchModel?.searchResults[indexPath.row]
         
         return cell
     }

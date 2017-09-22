@@ -9,9 +9,9 @@
 import UIKit
 
 internal class TextSearchViewModel: NSObject {
-    internal var textSearchModel: [TextSearchModel] = []
+    internal var textSearchModel: TextSearchModel?
     internal var numberOfItem: Int {
-        return textSearchModel.count
+        return textSearchModel?.searchResults.count ?? 0
     }
     
     internal func requestTextSearchItems(searchable: String,
@@ -26,19 +26,22 @@ internal class TextSearchViewModel: NSObject {
                         return
                     }
                     
-                    // TODO: Swift Collection Type으로 구현 가능한가?
-                    for dic in (json?["results"] as? NSArray)! {
-                        let result = dic as? NSDictionary
-                        print(dic)
-                        let model = TextSearchModel(name: result?["name"] as! String,
-                                                    addr: result?["formatted_address"] as! String,
-                                                    types: result?["types"] as! Array)
-                        
-                        self.textSearchModel.append(model)
-                    }
                     
-                    completionHandler()
-                    return
+//                    for dic in (json?["results"] as? NSArray)! {
+//                        let result = dic as? NSDictionary
+//                        print(dic)
+//                        let model = TextSearchModel(name: result?["name"] as! String,
+//                                                    addr: result?["formatted_address"] as! String,
+//                                                    types: result?["types"] as! Array)
+//                        
+//                        self.textSearchModel.append(model)
+//                    }
+                    
+                    if let results = json?["results"] as? NSArray {
+                        self.textSearchModel = TextSearchModel(searchResults: results)
+                        completionHandler()
+                        return
+                    }
                 }
             }) { (error) in
                 failResponse(error)
@@ -50,7 +53,7 @@ internal class TextSearchViewModel: NSObject {
     }
     
     internal func clearModel() {
-        textSearchModel = []
+        textSearchModel?.clearModel()
     }
     
 //    internal func nameForItemAtIndexPath(indexPath: IndexPath) -> String {
