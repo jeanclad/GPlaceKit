@@ -27,5 +27,4 @@ class SearchListTableViewCell: UITableViewCell {
             types.text = item.types.description
         }
     }
-    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
@@ -26,8 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         searchBar.becomeFirstResponder()
     }
-    
-    // MARK: UITableViewDataSource
+}
+
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return textSearchViewModel.numberOfItem
     }
@@ -38,13 +39,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-    
-    // MRAK: UITableViewDelegate
+}
+
+extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
-    // MARK: UISearchBarDelegate
+}
+
+extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
@@ -61,15 +64,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // TODO: Alert
             }
         }
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchText == "" {
-//            print("UISearchBar.text cleared!")
-//            
-//            textSearchViewModel.clearModel()
-//            tableView.reloadData()
-//        }
     }
 }
 
