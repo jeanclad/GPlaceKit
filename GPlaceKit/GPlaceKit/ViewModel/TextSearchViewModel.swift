@@ -11,11 +11,14 @@ import UIKit
 internal class TextSearchViewModel: NSObject {
     internal var textSearchModel: TextSearchModel?
     internal var numberOfItem: Int {
-        return textSearchModel?.searchResults.count ?? 0
+        if textSearchModel != nil {
+            return (textSearchModel?.searchResults.count)!
+        }
+        return 0
     }
     
     internal func requestTextSearchItems(searchable: String,
-                                         completionHandler: @escaping () -> Void,
+                                         completionHandler: @escaping (_ status: String?) -> Void,
                                          errorHandler failResponse: @escaping (Error) -> Void) {
         // TODO: URL + API_KEY은 Define
         let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(searchable)&language=ko&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
@@ -23,7 +26,12 @@ internal class TextSearchViewModel: NSObject {
             HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
                 if let data = response.data {
                     guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                        completionHandler()
+                        completionHandler(nil)
+                        return
+                    }
+                    
+                    if let erorr = json?["error_message"] as? String {
+                        completionHandler(erorr)
                         return
                     }
                     
@@ -31,9 +39,10 @@ internal class TextSearchViewModel: NSObject {
                         self.textSearchModel = TextSearchModel(searchResults: results)
                     }
                     
-                    completionHandler()
+                    completionHandler(nil)
                     return
                 }
+                print("aaa")
                 // TODO: Error
             }) { (error) in
                 failResponse(error)
@@ -41,6 +50,7 @@ internal class TextSearchViewModel: NSObject {
             }
         } else {
             // TODO: Alert(Something wrong)
+            print("bb")
         }
     }
     

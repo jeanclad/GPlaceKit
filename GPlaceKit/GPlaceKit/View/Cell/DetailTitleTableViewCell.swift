@@ -11,6 +11,8 @@ import UIKit
 class DetailTitleTableViewCell: UITableViewCell {
 
     @IBOutlet fileprivate var name: UILabel!
+    @IBOutlet fileprivate var addr: UILabel!
+    @IBOutlet fileprivate var phoneNum: UILabel!
     
     internal var item: DetailResultModel? {
         didSet {
@@ -19,5 +21,7 @@ class DetailTitleTableViewCell: UITableViewCell {
             }
             
             name.text = item.name
+            addr.text = item.addr
+            phoneNum.text = item.phoneNum
         }
     }}

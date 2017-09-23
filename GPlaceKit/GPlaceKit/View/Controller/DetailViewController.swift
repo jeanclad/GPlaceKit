@@ -8,11 +8,11 @@
 
 import UIKit
 
-internal class DetailViewController: UIViewController, UITableViewDataSource {
+internal class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     internal var detailViewModel = DetailViewModel()
     @IBOutlet fileprivate var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,14 +30,20 @@ internal class DetailViewController: UIViewController, UITableViewDataSource {
         return detailViewModel.numberOfItem
     }
     
+    // UITableViewDelegate
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 50
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        if indexPath.row == 0 {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! DetailTitleTableViewCell
-        cell.item = detailViewModel.detailResultModel
-        return cell
-        //        } else indexPath.row == 1 {
-        //
-        //        }
+        if indexPath.row == 0 || indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! DetailTitleTableViewCell
+            cell.item = detailViewModel.detailResultModel
+            return cell
+        } else { // if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! DetailPhotoTableViewCell
+            return cell
+        }
     }
     
     /*

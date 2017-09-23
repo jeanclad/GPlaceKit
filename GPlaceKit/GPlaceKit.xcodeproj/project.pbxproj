@@ -18,6 +18,7 @@
 		215BF0201F75D9DA005DDB68 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF01F1F75D9DA005DDB68 /* DetailViewModel.swift */; };
 		215BF0221F75DC1A005DDB68 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0211F75DC1A005DDB68 /* DetailModel.swift */; };
 		215BF0271F76139E005DDB68 /* DetailTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */; };
+		215BF0291F76254C005DDB68 /* DetailPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0281F76254C005DDB68 /* DetailPhotoTableViewCell.swift */; };
 		215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCADF1F74C4010032CE39 /* TextSearchModel.swift */; };
 		215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */; };
 		215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 		215BF01F1F75D9DA005DDB68 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		215BF0211F75DC1A005DDB68 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTitleTableViewCell.swift; sourceTree = "<group>"; };
+		215BF0281F76254C005DDB68 /* DetailPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		215DCADF1F74C4010032CE39 /* TextSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchModel.swift; sourceTree = "<group>"; };
 		215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchViewModel.swift; sourceTree = "<group>"; };
 		215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */,
 				215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */,
+				215BF0281F76254C005DDB68 /* DetailPhotoTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				215BF0221F75DC1A005DDB68 /* DetailModel.swift in Sources */,
 				215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */,
 				215BF0271F76139E005DDB68 /* DetailTitleTableViewCell.swift in Sources */,
+				215BF0291F76254C005DDB68 /* DetailPhotoTableViewCell.swift in Sources */,
 				215B79231F7339CD0012D944 /* ViewController.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
 				215DCAE61F753CFA0032CE39 /* DetailViewController.swift in Sources */,

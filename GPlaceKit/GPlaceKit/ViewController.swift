@@ -67,13 +67,23 @@ extension ViewController: UISearchBarDelegate {
         if searchString != "" {
             textSearchViewModel.clearModel()
             
-            textSearchViewModel.requestTextSearchItems(searchable: searchString!, completionHandler: {
-                DispatchQueue.main.async {
-                    self.tableView.setContentOffset(CGPoint.zero, animated: false)
-                    self.tableView.reloadData()
+            textSearchViewModel.requestTextSearchItems(searchable: searchString!, completionHandler: {status in
+                if status != nil {
+                    // TODO: 메소드로 정리
+                    let alert = UIAlertController(title: "알림", message: status, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    DispatchQueue.main.async {
+                        self.tableView.setContentOffset(CGPoint.zero, animated: false)
+                        self.tableView.reloadData()
+                    }
                 }
             }) { (error) in
-                // TODO: Alert
+                // TODO: 메소드로 정리
+                let alert = UIAlertController(title: "알림", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
