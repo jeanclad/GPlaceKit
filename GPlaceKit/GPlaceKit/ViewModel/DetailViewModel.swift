@@ -11,11 +11,17 @@ import UIKit
 internal class DetailViewModel: NSObject {
     internal var placeId: String?
     internal var detailResultModel: DetailResultModel?
-    internal let numberOfItem = 3
+    internal var numberOfItem: Int {
+        if detailResultModel != nil {
+            return 3
+        }
+        return 0
+    }
     
-    internal func requestDeatailInfo(                                         completionHandler: @escaping () -> Void,
-                                                                              errorHandler failResponse: @escaping (Error) -> Void) {
+    internal func requestDeatailInfo(completionHandler: @escaping () ->Void,
+                                     errorHandler failResponse: @escaping (Error) -> Void) {
         if let placeId = placeId {
+            // TODO: 하드코딩 제거
             let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&language=ko&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
             if let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                 HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
@@ -26,9 +32,9 @@ internal class DetailViewModel: NSObject {
                         }
                         
                         if let results = json?["result"] as? NSDictionary {
-//                            self.detailResultModel = DetailResultModel(name: results["name"] as! String,
-//                                                                       addr: results["formatted_address"] as! String,
-//                                                                       phoneNum: results["formatted_phone_number"] as! String)
+                            self.detailResultModel = DetailResultModel(name: results["name"] as? String ?? "",
+                                                                       addr: results["formatted_address"] as? String ?? "",
+                                                                       phoneNum: results["formatted_phone_number"] as? String ?? "")
                             completionHandler()
                             return
                         }

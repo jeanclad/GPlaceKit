@@ -8,47 +8,37 @@
 
 import UIKit
 
-internal class DetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+internal class DetailViewController: UIViewController, UITableViewDataSource {
     
     internal var detailViewModel = DetailViewModel()
+    @IBOutlet fileprivate var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         detailViewModel.requestDeatailInfo(completionHandler: {
-            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }) { (error) in
             
         }
     }
     
-    // UICollectionViewDataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    // UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detailViewModel.numberOfItem
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 1 {
-            return 20
-        }
-        
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titleCell", for: indexPath) as UICollectionViewCell
-            return cell
-        }
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as UICollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //        if indexPath.row == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! DetailTitleTableViewCell
+        cell.item = detailViewModel.detailResultModel
         return cell
+        //        } else indexPath.row == 1 {
+        //
+        //        }
     }
-    
-    // UICollectionViewDelegateFlowLayout
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        return CGSize(width: collectionView.bounds.width, height: 100)
-//        return CGSize(width: 100, height: 100)
-//    }
     
     /*
      // MARK: - Navigation

@@ -20,6 +20,7 @@ internal class DetailResultModel: NSObject {
     }
 }
 
+// TODO: 삭제
 //internal class DetailInfo: NSObject {
 //    internal let placeId: String
 //    

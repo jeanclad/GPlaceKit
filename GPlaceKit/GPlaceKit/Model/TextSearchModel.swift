@@ -32,10 +32,10 @@ internal class TextSearchModel: NSObject {
     init(searchResults: NSArray) {
         self.searchResults = searchResults.map { (result: Any) -> SearchResult in
             let dic = result as? NSDictionary
-            let searchResult = SearchResult(name: dic?["name"] as! String,
-                                       addr: dic?["formatted_address"] as! String,
-                                       placeId: dic?["place_id"] as! String,
-                                       types: dic?["types"] as! Array)
+            let searchResult = SearchResult(name: dic?["name"] as? String ?? "",
+                                            addr: dic?["formatted_address"] as? String ?? "",
+                                       placeId: dic?["place_id"] as? String ?? "",
+                                       types: dic?["types"] as? Array ?? [])
             return searchResult
         }        
     }

@@ -17,7 +17,7 @@
 		215B79481F73615D0012D944 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B79461F73615D0012D944 /* HTTPService.swift */; };
 		215BF0201F75D9DA005DDB68 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF01F1F75D9DA005DDB68 /* DetailViewModel.swift */; };
 		215BF0221F75DC1A005DDB68 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0211F75DC1A005DDB68 /* DetailModel.swift */; };
-		215BF0251F75FFB6005DDB68 /* DetailCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0241F75FFB6005DDB68 /* DetailCollectionViewFlowLayout.swift */; };
+		215BF0271F76139E005DDB68 /* DetailTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */; };
 		215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCADF1F74C4010032CE39 /* TextSearchModel.swift */; };
 		215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */; };
 		215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */; };
@@ -48,7 +48,7 @@
 		215B79461F73615D0012D944 /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		215BF01F1F75D9DA005DDB68 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		215BF0211F75DC1A005DDB68 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
-		215BF0241F75FFB6005DDB68 /* DetailCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTitleTableViewCell.swift; sourceTree = "<group>"; };
 		215DCADF1F74C4010032CE39 /* TextSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchModel.swift; sourceTree = "<group>"; };
 		215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchViewModel.swift; sourceTree = "<group>"; };
 		215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,7 +136,6 @@
 		215B79431F73611B0012D944 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				215BF0231F75FF9B005DDB68 /* Layout */,
 				215B79441F7361330012D944 /* Cell */,
 				215B79451F7361330012D944 /* Controller */,
 			);
@@ -147,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */,
+				215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -158,14 +158,6 @@
 				215DCAE51F753CFA0032CE39 /* DetailViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		215BF0231F75FF9B005DDB68 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				215BF0241F75FFB6005DDB68 /* DetailCollectionViewFlowLayout.swift */,
-			);
-			path = Layout;
 			sourceTree = "<group>";
 		};
 		215DCADE1F7495470032CE39 /* ViewModel */ = {
@@ -285,9 +277,9 @@
 				215B79471F73615D0012D944 /* HTTPService.swift in Sources */,
 				215BF0221F75DC1A005DDB68 /* DetailModel.swift in Sources */,
 				215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */,
+				215BF0271F76139E005DDB68 /* DetailTitleTableViewCell.swift in Sources */,
 				215B79231F7339CD0012D944 /* ViewController.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
-				215BF0251F75FFB6005DDB68 /* DetailCollectionViewFlowLayout.swift in Sources */,
 				215DCAE61F753CFA0032CE39 /* DetailViewController.swift in Sources */,
 				215BF0201F75D9DA005DDB68 /* DetailViewModel.swift in Sources */,
 			);
