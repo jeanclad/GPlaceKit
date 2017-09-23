@@ -216,6 +216,7 @@
                                                             <state key="normal" title="더보기"/>
                                                             <connections>
                                                                 <action selector="moreButtonPressed:" destination="qbn-4e-0xP" eventType="touchUpInside" id="fhT-o9-oGU"/>
+                                                                <segue destination="NpJ-zr-sYT" kind="presentation" modalTransitionStyle="crossDissolve" id="6rF-fe-L9n"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -295,6 +296,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD1-TM-3Ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208.8000000000002" y="757.87106446776613"/>
+        </scene>
+        <!--Photo PageV View Controller-->
+        <scene sceneID="3t1-36-07O">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="NpJ-zr-sYT" customClass="PhotoPageVViewController" customModule="GPlaceKit" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xe-6W-ERc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3129" y="758"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="k9p-w2-l4G">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewController" id="JKh-l3-JkL" customClass="PhotoViewController" customModule="GPlaceKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ROP-Pi-icS"/>
+                        <viewControllerLayoutGuide type="bottom" id="JZt-Q3-Czo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nBF-bT-lwb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RYX-2X-jVC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.72156862749999995" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RYX-2X-jVC" secondAttribute="trailing" id="4X0-yF-eS0"/>
+                            <constraint firstItem="JZt-Q3-Czo" firstAttribute="top" secondItem="RYX-2X-jVC" secondAttribute="bottom" id="HNg-kC-foZ"/>
+                            <constraint firstItem="RYX-2X-jVC" firstAttribute="top" secondItem="nBF-bT-lwb" secondAttribute="top" id="Nea-mn-eTL"/>
+                            <constraint firstItem="RYX-2X-jVC" firstAttribute="leading" secondItem="nBF-bT-lwb" secondAttribute="leading" id="h66-f2-V9b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="RYX-2X-jVC" id="yxC-ch-myS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjG-MH-hV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4053.5999999999999" y="764.16791604197908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B6U-zp-SfK">
