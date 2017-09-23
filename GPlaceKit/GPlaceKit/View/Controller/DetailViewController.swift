@@ -54,7 +54,6 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! DetailPhotoTableViewCell
             cell.item = detailViewModel.detailResultModel?.detailPhotos
-            
             return cell
         }
     }

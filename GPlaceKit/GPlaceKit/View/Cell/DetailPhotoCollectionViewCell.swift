@@ -9,9 +9,7 @@
 import UIKit
 
 class DetailPhotoCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet fileprivate var photoImageView: AsyncImageView!
-    
+    @IBOutlet private var photoImageView: AsyncImageView!
     internal var item: DetailPhotos? {
         didSet {
             guard let item = item else {
@@ -37,5 +35,11 @@ class DetailPhotoCollectionViewCell: UICollectionViewCell {
         baseUrl.append("key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs")
         
         return baseUrl
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        photoImageView.image = UIImage()
     }
 }

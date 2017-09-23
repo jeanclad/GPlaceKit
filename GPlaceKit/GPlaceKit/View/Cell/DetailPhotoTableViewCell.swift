@@ -18,7 +18,7 @@ class DetailPhotoTableViewCell: UITableViewCell, UICollectionViewDataSource , UI
                 return
             }
             
-            self.collectionView .reloadData()
+            self.collectionView.reloadData()
         }
     }
     
