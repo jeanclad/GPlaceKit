@@ -26,7 +26,7 @@ class GPlaceKitTests: XCTestCase {
     func testFetchGETWithJson() {
         let expectation = self.expectation(description: "HTTPLite-Request")
         
-        let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=플레이뮤지엄&language=ko&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
+        let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=플레이뮤지엄&language=ko&key=\(apiKey)"
         let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         HTTPService.shared.fetchGET(urlString: encoded_url!, completion: { (response) in

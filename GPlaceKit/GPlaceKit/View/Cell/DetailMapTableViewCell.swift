@@ -30,7 +30,7 @@ class DetailMapTableViewCell: UITableViewCell {
         
         let screenWidth = Int(UIScreen.main.bounds.width)
         // TODO: APK_KEY 선언
-        let url = "https://maps.googleapis.com/maps/api/staticmap?center=\(lat),\(lng)&zoom=16&size=\(screenWidth)x200&markers=\(lat),\(lng)&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
+        let url = "https://maps.googleapis.com/maps/api/staticmap?center=\(lat),\(lng)&zoom=16&size=\(screenWidth)x200&markers=\(lat),\(lng)&key=\(apiKey)"
         
         return url
     }

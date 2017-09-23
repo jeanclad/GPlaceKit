@@ -11,6 +11,8 @@ import UIKit
 public typealias successClosure = (Response) -> ()
 public typealias failureClosure = (Error) -> ()
 
+let apiKey = "AIzaSyDUfKaxDMfrpM1mQB5a_rm73gDnTeCAhQc" //"AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
+
 fileprivate enum HTTPMethod: String {
     case GET = "GET"
     case POST = "POST"

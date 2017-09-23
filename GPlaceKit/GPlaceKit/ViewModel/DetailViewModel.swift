@@ -22,7 +22,7 @@ internal class DetailViewModel: NSObject {
                                      errorHandler failResponse: @escaping (Error) -> Void) {
         if let placeId = placeId {
             // TODO: 하드코딩 제거
-            let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&language=ko&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
+            let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&language=ko&key=\(apiKey)"
             if let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                 HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
                     if let data = response.data {

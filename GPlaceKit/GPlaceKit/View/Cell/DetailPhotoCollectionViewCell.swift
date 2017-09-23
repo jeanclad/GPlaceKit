@@ -32,7 +32,7 @@ class DetailPhotoCollectionViewCell: UICollectionViewCell {
         baseUrl.append("maxwidth=\(Int(photoImageView.bounds.width))&maxheight=\(Int(photoImageView.bounds.height))&")
         baseUrl.append("photoreference=\(item.reference!)&")
         // TODO: API_KEY 선언
-        baseUrl.append("key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs")
+        baseUrl.append("key=\(apiKey)")
         
         return baseUrl
     }

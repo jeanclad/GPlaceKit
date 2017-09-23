@@ -209,6 +209,15 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-pA-yiE">
+                                                            <rect key="frame" x="56" y="3" width="46" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="더보기"/>
+                                                            <connections>
+                                                                <action selector="moreButtonPressed:" destination="qbn-4e-0xP" eventType="touchUpInside" id="fhT-o9-oGU"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -261,6 +270,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="ezk-Js-pJQ" id="PYR-3l-7dA"/>
+                                            <outlet property="moreButton" destination="Mmg-pA-yiE" id="LN3-fb-UNR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
