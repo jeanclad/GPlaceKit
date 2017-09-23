@@ -11,6 +11,7 @@ import UIKit
 public typealias successClosure = (Response) -> ()
 public typealias failureClosure = (Error) -> ()
 
+// TODO: 키교체
 let apiKey = "AIzaSyDUfKaxDMfrpM1mQB5a_rm73gDnTeCAhQc" //"AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
 
 fileprivate enum HTTPMethod: String {
