@@ -26,9 +26,9 @@ internal class DetailViewModel: NSObject {
                         }
                         
                         if let results = json?["result"] as? NSDictionary {
-                            self.detailResultModel = DetailResultModel(name: results["name"] as! String,
-                                                                       addr: results["formatted_address"] as! String,
-                                                                       phoneNum: results["formatted_phone_number"] as! String)
+//                            self.detailResultModel = DetailResultModel(name: results["name"] as! String,
+//                                                                       addr: results["formatted_address"] as! String,
+//                                                                       phoneNum: results["formatted_phone_number"] as! String)
                             completionHandler()
                             return
                         }
