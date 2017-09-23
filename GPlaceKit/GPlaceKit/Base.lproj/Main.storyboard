@@ -75,7 +75,7 @@
                                             <outlet property="addr" destination="2wj-lX-JvR" id="jSA-Da-Luw"/>
                                             <outlet property="name" destination="dWZ-N2-d7r" id="Eh1-CE-xEz"/>
                                             <outlet property="types" destination="lR4-aC-ihL" id="86k-fe-Duq"/>
-                                            <segue destination="git-sX-hj2" kind="show" id="lq3-Ii-16q"/>
+                                            <segue destination="git-sX-hj2" kind="show" identifier="DetailViewController" id="0jL-Zl-fJ3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,35 +99,10 @@
                     <navigationItem key="navigationItem" title="장소 검색" id="JPI-6g-DjV"/>
                     <connections>
                         <outlet property="searchBar" destination="e2G-RC-KAz" id="W3a-xi-JSJ"/>
-                        <outlet property="searchDisplayController" destination="p5L-fv-SCe" id="xSy-yb-EJR"/>
                         <outlet property="tableView" destination="Hkc-yB-o41" id="Dr5-Kq-L3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="lb1-uX-T8G">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="tr4-8o-1SH"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="uNr-4X-jKD"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="PUG-0l-yb2"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="b8Y-H7-Yr3"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="2ZO-XX-PDX">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="drI-xJ-ge7"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="wDT-fN-eMy"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="vEo-OJ-SH5"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Rii-mf-UXt"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="p5L-fv-SCe">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="qpv-wn-4qn"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="0Xp-ni-0xn"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="mo6-p0-02A"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="TsH-pf-C7B"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1240.8" y="757.87106446776613"/>
         </scene>

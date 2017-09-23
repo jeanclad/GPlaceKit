@@ -11,11 +11,13 @@ import UIKit
 internal class SearchResult: NSObject {
     internal let name: String
     internal let addr: String
+    internal let placeId: String
     internal var types: [String]
     
-    init(name: String, addr: String, types: [String]) {
+    init(name: String, addr: String, placeId: String, types: [String]) {
         self.name = name
         self.addr = addr
+        self.placeId = placeId
         self.types = types
     }
 }
@@ -30,8 +32,9 @@ internal class TextSearchModel: NSObject {
     init(searchResults: NSArray) {
         self.searchResults = searchResults.map { (result: Any) -> SearchResult in
             let dic = result as? NSDictionary
-            let searchResult = SearchResult.init(name: dic?["name"] as! String,
+            let searchResult = SearchResult(name: dic?["name"] as! String,
                                        addr: dic?["formatted_address"] as! String,
+                                       placeId: dic?["place_id"] as! String,
                                        types: dic?["types"] as! Array)
             return searchResult
         }        

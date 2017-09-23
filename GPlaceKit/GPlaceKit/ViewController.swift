@@ -31,8 +31,8 @@ internal class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailViewController", let destination = segue.destination as? DetailViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-//                let appId = chartViewModel.chartModel?.feed?.entries?[indexPath.row].appId?.idAttr?.imId
-//                destination.detailViewModel.appId = appId
+                let placeId = textSearchViewModel.textSearchModel?.searchResults[indexPath.row].placeId
+                destination.detailViewModel.placeId = placeId
             }
         }
     }

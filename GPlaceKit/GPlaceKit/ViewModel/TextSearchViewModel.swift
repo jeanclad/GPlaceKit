@@ -17,7 +17,7 @@ internal class TextSearchViewModel: NSObject {
     internal func requestTextSearchItems(searchable: String,
                                          completionHandler: @escaping () -> Void,
                                          errorHandler failResponse: @escaping (Error) -> Void) {
-        // TODO: URL은 Define
+        // TODO: URL + API_KEY은 Define
         let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(searchable)&language=ko&key=AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
         if let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
@@ -34,6 +34,7 @@ internal class TextSearchViewModel: NSObject {
                     completionHandler()
                     return
                 }
+                // TODO: Error
             }) { (error) in
                 failResponse(error)
                 return

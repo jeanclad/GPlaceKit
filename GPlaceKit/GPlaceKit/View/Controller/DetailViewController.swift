@@ -10,19 +10,16 @@ import UIKit
 
 internal class DetailViewController: UIViewController {
     
-    internal var placeId: String?
-
+    internal var detailViewModel = DetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        detailViewModel.requestDeatailInfo(completionHandler: { 
+            
+        }) { (error) in
+            
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
