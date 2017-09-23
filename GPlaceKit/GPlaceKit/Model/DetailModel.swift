@@ -9,14 +9,19 @@
 import UIKit
 
 internal class DetailResultModel: NSObject {
-    internal let name: String
-    internal let addr: String
-    internal let phoneNum: String
+    internal let name: String?
+    internal let addr: String?
+    internal let phoneNum: String?
+    internal let lat: NSNumber?
+    internal let lng: NSNumber?
+
     
-    init(name: String, addr: String, phoneNum: String) {
+    init(name: String?, addr: String?, phoneNum: String?, lat: NSNumber?, lng: NSNumber?) {
         self.name = name
         self.addr = addr
         self.phoneNum = phoneNum
+        self.lat = lat
+        self.lng = lng
     }
 }
 

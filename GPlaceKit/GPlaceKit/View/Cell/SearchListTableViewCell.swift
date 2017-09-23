@@ -23,8 +23,8 @@ class SearchListTableViewCell: UITableViewCell {
             name.text = item.name
             addr.text = item.addr
             
-            if !item.types.isEmpty {
-                types.text = item.types.description
+            if let pTypes = item.types {
+                types.text = pTypes.description
             }
         }
     }

@@ -16,6 +16,8 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.estimatedRowHeight = 100
+        
         detailViewModel.requestDeatailInfo(completionHandler: {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -31,13 +33,22 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
     }
     
     // UITableViewDelegate
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 50
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return UITableViewAutomaticDimension
+        } else if indexPath.row == 1 {
+            return 200
+        }
+        return 100
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 || indexPath.row == 1 {
+        if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! DetailTitleTableViewCell
+            cell.item = detailViewModel.detailResultModel
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! DetailMapTableViewCell
             cell.item = detailViewModel.detailResultModel
             return cell
         } else { // if indexPath.row == 2 {

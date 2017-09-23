@@ -22,6 +22,16 @@ class DetailTitleTableViewCell: UITableViewCell {
             
             name.text = item.name
             addr.text = item.addr
-            phoneNum.text = item.phoneNum
+            phoneNum.text = getPrefixPhoneNum(phoneNum: item.phoneNum)
         }
-    }}
+    }
+
+    private func getPrefixPhoneNum(phoneNum: String?) -> String {
+        guard let phoneNum = phoneNum else {
+            return ""
+        }
+        
+        return "전화번호 : \(phoneNum)"
+    }
+}
+

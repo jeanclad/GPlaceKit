@@ -32,9 +32,11 @@ internal class DetailViewModel: NSObject {
                         }
                         
                         if let results = json?["result"] as? NSDictionary {
-                            self.detailResultModel = DetailResultModel(name: results["name"] as? String ?? "",
-                                                                       addr: results["formatted_address"] as? String ?? "",
-                                                                       phoneNum: results["formatted_phone_number"] as? String ?? "")
+                            self.detailResultModel = DetailResultModel(name: results["name"] as? String ?? nil,
+                                                                       addr: results["formatted_address"] as? String ?? nil,
+                                                                       phoneNum: results["formatted_phone_number"] as? String ?? nil,
+                                                                       lat: results.value(forKeyPath: "geometry.location.lat") as? NSNumber ?? nil,
+                                                                       lng: results.value(forKeyPath: "geometry.location.lng") as? NSNumber ?? nil)
                             completionHandler()
                             return
                         }
