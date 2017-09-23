@@ -50,25 +50,12 @@ internal class TextSearchViewModel: NSObject {
             }
         } else {
             // TODO: Alert(Something wrong)
-            print("bb")
         }
     }
     
     internal func clearModel() {
         textSearchModel?.clearModel()
     }
-    
-//    internal func nameForItemAtIndexPath(indexPath: IndexPath) -> String {
-//        return textSearchModel[indexPath.row].name
-//    }
-//    
-//    internal func addrForItemAtIndexPath(indexPath: IndexPath) -> String {
-//        return textSearchModel[indexPath.row].addr
-//    }
-//
-//    internal func typesForItemAtIndexPath(indexPath: IndexPath) -> String {
-//        return textSearchModel[indexPath.row].types.description
-//    }
 }
 
 

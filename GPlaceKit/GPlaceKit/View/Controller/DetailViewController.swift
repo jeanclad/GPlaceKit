@@ -39,7 +39,7 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
         } else if indexPath.row == 1 {
             return 200
         }
-        return 100
+        return 130
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,8 +51,10 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
             let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! DetailMapTableViewCell
             cell.item = detailViewModel.detailResultModel
             return cell
-        } else { // if indexPath.row == 2 {
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! DetailPhotoTableViewCell
+            cell.item = detailViewModel.detailResultModel?.detailPhotos
+            
             return cell
         }
     }

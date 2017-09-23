@@ -156,9 +156,9 @@
 			children = (
 				215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */,
 				215BF0261F76139E005DDB68 /* DetailTitleTableViewCell.swift */,
+				215BF02C1F764711005DDB68 /* DetailMapTableViewCell.swift */,
 				215BF0281F76254C005DDB68 /* DetailPhotoTableViewCell.swift */,
 				215BF02A1F763B6B005DDB68 /* DetailPhotoCollectionViewCell.swift */,
-				215BF02C1F764711005DDB68 /* DetailMapTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

@@ -10,16 +10,26 @@ import UIKit
 
 class DetailPhotoTableViewCell: UITableViewCell, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet private var collectionView: UICollectionView!
+    
+    internal var item: [DetailPhotos]? {
+        didSet {
+            guard item != nil else {
+                return
+            }
+            
+            self.collectionView .reloadData()
+        }
+    }
     
     // UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return item?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCollectionCell", for: indexPath) as UICollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCollectionCell", for: indexPath) as! DetailPhotoCollectionViewCell
+        cell.item = item?[indexPath.item]
         return cell
     }
     

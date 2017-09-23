@@ -14,7 +14,7 @@ internal class SearchResult: NSObject {
     internal let placeId: String?
     internal var types: [String]?
     
-    init(name: String?, addr: String?, placeId: String?, types: [String]?) {
+    init(name: String? = nil, addr: String? = nil, placeId: String? = nil, types: [String]? = nil) {
         self.name = name
         self.addr = addr
         self.placeId = placeId
@@ -32,10 +32,10 @@ internal class TextSearchModel: NSObject {
     init(searchResults: NSArray) {
         self.searchResults = searchResults.map { (result: Any) -> SearchResult in
             let dic = result as? NSDictionary
-            let searchResult = SearchResult(name: dic?["name"] as? String ?? nil,
-                                            addr: dic?["formatted_address"] as? String ?? nil,
-                                       placeId: dic?["place_id"] as? String ?? nil,
-                                       types: dic?["types"] as? Array ?? nil)
+            let searchResult = SearchResult(name: dic?["name"] as? String,
+                                            addr: dic?["formatted_address"] as? String,
+                                       placeId: dic?["place_id"] as? String,
+                                       types: dic?["types"] as? Array)
             return searchResult
         }        
     }
