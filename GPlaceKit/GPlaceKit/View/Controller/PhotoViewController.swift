@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
-    @IBOutlet private var photoImageView: AsyncImageView!
+    @IBOutlet private var photoImageView: UIImageView!
     internal var photoViewModel = PhotoViewModel()
     
     override func viewDidLoad() {

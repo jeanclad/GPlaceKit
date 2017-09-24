@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailMapTableViewCell: UITableViewCell {
-    @IBOutlet private var mapImageView: AsyncImageView!
+    @IBOutlet private var mapImageView: UIImageView!
     internal var item: DetailResultModel? {
         didSet {
             guard let item = item else {

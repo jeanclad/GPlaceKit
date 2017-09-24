@@ -1,21 +1,20 @@
 //
-//  AsyncImageView.swift
+//  UIImageView+Extension.swift
 //  GPlaceKit
 //
-//  Created by jeanclad on 2017. 9. 23..
+//  Created by jeanclad on 2017. 9. 24..
 //  Copyright © 2017년 jeanclad. All rights reserved.
 //
 
 import UIKit
 
-class AsyncImageView: UIImageView {
-    let CACHE_SEC : TimeInterval = 5 * 60;
-    
-    func loadImage(urlString: String?){
+extension UIImageView {
+    func loadImage(urlString: String? ){
         guard let urlString = urlString else {
             return
         }
         
+        let CACHE_SEC : TimeInterval = 5 * 60;
         let req = NSURLRequest(url: NSURL(string:urlString)! as URL,
                                cachePolicy: .returnCacheDataElseLoad,
                                timeoutInterval: CACHE_SEC);

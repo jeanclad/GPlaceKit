@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailPhotoCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private var photoImageView: AsyncImageView!
+    @IBOutlet private var photoImageView: UIImageView!
     internal var item: DetailPhotos? {
         didSet {
             guard let item = item else {
