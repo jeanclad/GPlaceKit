@@ -300,7 +300,7 @@
         <!--Photo PageV View Controller-->
         <scene sceneID="3t1-36-07O">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="NpJ-zr-sYT" customClass="PhotoPageVViewController" customModule="GPlaceKit" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NpJ-zr-sYT" customClass="PhotoPageVViewController" customModule="GPlaceKit" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xe-6W-ERc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3129" y="758"/>

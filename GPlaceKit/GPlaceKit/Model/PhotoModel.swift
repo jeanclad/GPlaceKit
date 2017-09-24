@@ -9,6 +9,7 @@
 import UIKit
 
 class PhotoModel: NSObject {
+    internal var pageIndex = 0
     internal var imageUrl: String?
     
     init(imageUrl: String? = nil) {

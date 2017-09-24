@@ -10,6 +10,14 @@ import UIKit
 
 class PhotoPageViewModel: NSObject {
     internal var detailPhotos: [DetailPhotos]?
+    internal var numberOfItem: Int {
+        if let detailPhotos = detailPhotos  {
+            return detailPhotos.count
+        }
+        
+        return 0
+    }
+
     
     internal func getPhotoUrl(size: CGSize, index: Int) -> String? {
         let url = UrlFactory().getPhotoUrl(size: size, reference: detailPhotos?[index].reference)
