@@ -17,13 +17,12 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         
         self.tableView.estimatedRowHeight = 100
-        
-        detailViewModel.requestDeatailInfo(completionHandler: {
+        detailViewModel.requestDeatailInfo(completionHandler: { (status) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }) { (error) in
-            
+            self.alertMessage("알림", message: error.localizedDescription)
         }
     }
     

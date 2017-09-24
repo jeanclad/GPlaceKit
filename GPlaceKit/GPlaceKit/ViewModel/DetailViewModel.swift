@@ -18,14 +18,19 @@ internal class DetailViewModel: NSObject {
         return 0
     }
     
-    internal func requestDeatailInfo(completionHandler: @escaping () ->Void,                                     errorHandler failResponse: @escaping (Error) -> Void) {
+    internal func requestDeatailInfo(completionHandler: @escaping (_ status: String?) ->Void,                                     errorHandler failResponse: @escaping (Error) -> Void) {
         if let placeId = placeId {
             let url = UrlFactory().getDetailPlaceUrl(placeId: placeId)
             if let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                 HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
                     if let data = response.data {
                         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                            completionHandler()
+                            completionHandler(nil)
+                            return
+                        }
+                        
+                        if let erorr = json?["error_message"] as? String {
+                            completionHandler(erorr)
                             return
                         }
                         
@@ -37,14 +42,17 @@ internal class DetailViewModel: NSObject {
                                                   lat: results.value(forKeyPath: "geometry.location.lat") as? NSNumber,
                                                   lng: results.value(forKeyPath: "geometry.location.lng") as? NSNumber,
                                                   photos: results["photos"] as? NSArray)
-                            completionHandler()
+                            completionHandler(nil)
                             return
                         }
                         // TODO: Error
                     }
                 }, failure: { (error) in
-                    
+                    failResponse(error)
+                    return
                 })
+            } else {
+                // TODO: Alert(Something wrong)
             }
         }
     }

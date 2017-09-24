@@ -9,7 +9,9 @@
 import UIKit
 
 extension UIViewController {
-    func alertMessage(_ title: String, message: String, completionHandler: ((UIAlertAction) -> Void)? = nil) {
+    func alertMessage(_ title: String,
+                      message: String,
+                      completionHandler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: UIAlertControllerStyle.alert)
@@ -23,7 +25,6 @@ extension UIViewController {
                                      handler: handler)
         
         alert.addAction(okAction)
-        
         present(alert, animated: true, completion: nil)
     }
 }
