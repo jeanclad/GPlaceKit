@@ -8,7 +8,9 @@
 
 import UIKit
 
-class UrlFactory {
+internal let apiKey = "AIzaSyDvHzmSse2t1zJd4-idzQIDd-Wdf7PecdQ"
+
+internal class UrlFactory {
     
     internal func getTextSearchUrl(searchable: String) -> String {
         return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(searchable)&language=ko&key=\(apiKey)"

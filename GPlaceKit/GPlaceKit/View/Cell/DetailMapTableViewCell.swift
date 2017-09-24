@@ -20,6 +20,10 @@ class DetailMapTableViewCell: UITableViewCell {
             let url = UrlFactory().getMapUrlFromCurrentScreen(lat: item.lat, lng: item.lng)
             if let urlString = url {
                 ImageLoader.sharedLoader.downloadImageFrom(urlString: urlString, completionHandler: { (image) in
+                    guard image != nil else {
+                        return
+                    }
+
                     self.mapImageView.image = image
                 })
             }
