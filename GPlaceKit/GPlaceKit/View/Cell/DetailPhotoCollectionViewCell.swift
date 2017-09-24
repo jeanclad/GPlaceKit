@@ -18,7 +18,18 @@ class DetailPhotoCollectionViewCell: UICollectionViewCell {
             
             let url = UrlFactory().getPhotoUrl(size: photoImageView.bounds.size, reference: item.reference)
             if let url = url {
-                photoImageView.loadImage(urlString: url)
+                photoImageView.loadImage(
+                    urlString: url,
+                    completionHandler: { (image) in
+                        guard image != nil else {
+                            return
+                        }
+                        
+                        if (image?.size.width)! > self.photoImageView.bounds.width ||
+                            (image?.size.height)! > self.photoImageView.bounds.height {
+                            self.photoImageView.image = image?.resizeImage(targetSize: self.photoImageView.bounds.size)
+                        }
+                })
             }
         }
     }

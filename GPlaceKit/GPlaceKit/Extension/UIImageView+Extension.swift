@@ -9,7 +9,9 @@
 import UIKit
 
 extension UIImageView {
-    func loadImage(urlString: String? ){
+    func loadImage(urlString: String?,
+                   completionHandler: ((_ image: UIImage?) -> Void)? = nil,
+                   errorHandler failResponse: ((_ error: Error?) -> Void)? = nil) {
         guard let urlString = urlString else {
             return
         }
@@ -26,9 +28,12 @@ extension UIImageView {
                 if((err) == nil){
                     let image = UIImage(data:data!)
                     self.image = image;
-                    
+                    completionHandler?(image ?? nil)
+                    return
                 } else{
                     print("AsyncImageView:Error \(err?.localizedDescription ?? "")");
+                    failResponse?(err ?? nil)
+                    return
                 }
         }).resume();
     }
