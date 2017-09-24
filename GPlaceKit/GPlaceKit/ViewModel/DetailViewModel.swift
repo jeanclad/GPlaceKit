@@ -20,8 +20,7 @@ internal class DetailViewModel: NSObject {
     
     internal func requestDeatailInfo(completionHandler: @escaping () ->Void,                                     errorHandler failResponse: @escaping (Error) -> Void) {
         if let placeId = placeId {
-            // TODO: 하드코딩 제거
-            let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&language=ko&key=\(apiKey)"
+            let url = UrlFactory().getDetailPlaceUrl(placeId: placeId)
             if let encoded_url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                 HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
                     if let data = response.data {
