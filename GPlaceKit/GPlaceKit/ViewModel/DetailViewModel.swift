@@ -18,8 +18,7 @@ internal class DetailViewModel: NSObject {
         return 0
     }
     
-    internal func requestDeatailInfo(completionHandler: @escaping () ->Void,
-                                     errorHandler failResponse: @escaping (Error) -> Void) {
+    internal func requestDeatailInfo(completionHandler: @escaping () ->Void,                                     errorHandler failResponse: @escaping (Error) -> Void) {
         if let placeId = placeId {
             // TODO: 하드코딩 제거
             let url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&language=ko&key=\(apiKey)"

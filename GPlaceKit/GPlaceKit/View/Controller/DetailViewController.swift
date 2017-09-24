@@ -12,7 +12,7 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
     
     internal var detailViewModel = DetailViewModel()
     @IBOutlet fileprivate var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,14 +58,10 @@ internal class DetailViewController: UIViewController, UITableViewDataSource, UI
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PhotoPageVViewController", let destination = segue.destination as? PhotoPageVViewController {
+            destination.photoPageViewModel.detailPhotos = detailViewModel.detailResultModel?.detailPhotos
+        }
+    }
 }

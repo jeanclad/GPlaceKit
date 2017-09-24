@@ -24,10 +24,14 @@
 		215BF0291F76254C005DDB68 /* DetailPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF0281F76254C005DDB68 /* DetailPhotoTableViewCell.swift */; };
 		215BF02B1F763B6B005DDB68 /* DetailPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF02A1F763B6B005DDB68 /* DetailPhotoCollectionViewCell.swift */; };
 		215BF02D1F764711005DDB68 /* DetailMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BF02C1F764711005DDB68 /* DetailMapTableViewCell.swift */; };
+		215CE4F51F77578900B1F649 /* PhotoPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215CE4F41F77578900B1F649 /* PhotoPageViewModel.swift */; };
+		215CE4F71F775A8A00B1F649 /* UrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215CE4F61F775A8A00B1F649 /* UrlFactory.swift */; };
 		215DCAE01F74C4010032CE39 /* TextSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCADF1F74C4010032CE39 /* TextSearchModel.swift */; };
 		215DCAE21F74C5450032CE39 /* TextSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */; };
 		215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */; };
 		215DCAE61F753CFA0032CE39 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DCAE51F753CFA0032CE39 /* DetailViewController.swift */; };
+		219882FD1F77621A008C2614 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219882FC1F77621A008C2614 /* PhotoViewModel.swift */; };
+		219882FF1F77623A008C2614 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219882FE1F77623A008C2614 /* PhotoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +65,14 @@
 		215BF0281F76254C005DDB68 /* DetailPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		215BF02A1F763B6B005DDB68 /* DetailPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		215BF02C1F764711005DDB68 /* DetailMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMapTableViewCell.swift; sourceTree = "<group>"; };
+		215CE4F41F77578900B1F649 /* PhotoPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPageViewModel.swift; sourceTree = "<group>"; };
+		215CE4F61F775A8A00B1F649 /* UrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlFactory.swift; sourceTree = "<group>"; };
 		215DCADF1F74C4010032CE39 /* TextSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchModel.swift; sourceTree = "<group>"; };
 		215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSearchViewModel.swift; sourceTree = "<group>"; };
 		215DCAE31F750FCE0032CE39 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
 		215DCAE51F753CFA0032CE39 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		219882FC1F77621A008C2614 /* PhotoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewModel.swift; path = ../Model/PhotoViewModel.swift; sourceTree = "<group>"; };
+		219882FE1F77623A008C2614 /* PhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 			children = (
 				215DCADF1F74C4010032CE39 /* TextSearchModel.swift */,
 				215BF0211F75DC1A005DDB68 /* DetailModel.swift */,
+				219882FE1F77623A008C2614 /* PhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 			children = (
 				215B79461F73615D0012D944 /* HTTPService.swift */,
 				212C447C1F7659BB002B8322 /* AsyncImageView.swift */,
+				215CE4F61F775A8A00B1F649 /* UrlFactory.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 			children = (
 				215DCAE11F74C5450032CE39 /* TextSearchViewModel.swift */,
 				215BF01F1F75D9DA005DDB68 /* DetailViewModel.swift */,
+				215CE4F41F77578900B1F649 /* PhotoPageViewModel.swift */,
+				219882FC1F77621A008C2614 /* PhotoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -298,13 +310,17 @@
 				215A91921F76A90E003346B2 /* PhotoPageVViewController.swift in Sources */,
 				215BF0221F75DC1A005DDB68 /* DetailModel.swift in Sources */,
 				215DCAE41F750FCE0032CE39 /* SearchListTableViewCell.swift in Sources */,
+				215CE4F51F77578900B1F649 /* PhotoPageViewModel.swift in Sources */,
 				215BF0271F76139E005DDB68 /* DetailTitleTableViewCell.swift in Sources */,
 				215BF0291F76254C005DDB68 /* DetailPhotoTableViewCell.swift in Sources */,
 				215B79231F7339CD0012D944 /* ViewController.swift in Sources */,
+				215CE4F71F775A8A00B1F649 /* UrlFactory.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
 				215DCAE61F753CFA0032CE39 /* DetailViewController.swift in Sources */,
+				219882FD1F77621A008C2614 /* PhotoViewModel.swift in Sources */,
 				215A91941F76A9B5003346B2 /* PhotoViewController.swift in Sources */,
 				215BF0201F75D9DA005DDB68 /* DetailViewModel.swift in Sources */,
+				219882FF1F77623A008C2614 /* PhotoModel.swift in Sources */,
 				212C447D1F7659BB002B8322 /* AsyncImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,11 @@ import UIKit
 class AsyncImageView: UIImageView {
     let CACHE_SEC : TimeInterval = 5 * 60;
     
-    func loadImage(urlString: String){
+    func loadImage(urlString: String?){
+        guard let urlString = urlString else {
+            return
+        }
+        
         let req = NSURLRequest(url: NSURL(string:urlString)! as URL,
                                cachePolicy: .returnCacheDataElseLoad,
                                timeoutInterval: CACHE_SEC);

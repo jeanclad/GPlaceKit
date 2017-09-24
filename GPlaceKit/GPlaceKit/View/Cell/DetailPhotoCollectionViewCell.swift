@@ -16,27 +16,13 @@ class DetailPhotoCollectionViewCell: UICollectionViewCell {
                 return
             }
             
-            let url = getPhotoUrl(item: item)
+            let url = UrlFactory().getPhotoUrl(size: photoImageView.bounds.size, reference: item.reference)
             if let url = url {
                 photoImageView.loadImage(urlString: url)
             }
         }
     }
-    
-    private func getPhotoUrl(item: DetailPhotos) -> String?{
-        guard item.reference != nil else {
-            return nil
-        }
         
-        var baseUrl = "https://maps.googleapis.com/maps/api/place/photo?"
-        baseUrl.append("maxwidth=\(Int(photoImageView.bounds.width))&maxheight=\(Int(photoImageView.bounds.height))&")
-        baseUrl.append("photoreference=\(item.reference!)&")
-        // TODO: API_KEY 선언
-        baseUrl.append("key=\(apiKey)")
-        
-        return baseUrl
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         
