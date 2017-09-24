@@ -25,7 +25,7 @@ internal class TextSearchViewModel: NSObject {
             HTTPService.shared.fetchGET(urlString: encoded_url, completion: { (response) in
                 if let data = response.data {
                     guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                        completionHandler(nil)
+                        completionHandler(StringFactory().getTextJsonFail())
                         return
                     }
                     
@@ -40,14 +40,18 @@ internal class TextSearchViewModel: NSObject {
                     
                     completionHandler(nil)
                     return
+                } else {
+                    completionHandler(StringFactory().getTextJsonFail())
+                    return
+                    
                 }
-                // TODO: Error
             }) { (error) in
                 failResponse(error)
                 return
             }
         } else {
-            // TODO: Alert(Something wrong)
+            completionHandler(StringFactory().getTextSeachableFail())
+            return
         }
     }
     

@@ -34,6 +34,7 @@
 		219883041F778063008C2614 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883031F778063008C2614 /* UIImage+Extension.swift */; };
 		219883081F779F94008C2614 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883071F779F94008C2614 /* ImageLoader.swift */; };
 		2198830A1F77A7B2008C2614 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883091F77A7B2008C2614 /* UIViewController+Extension.swift */; };
+		2198830C1F77AE75008C2614 /* StringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2198830B1F77AE75008C2614 /* StringFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		219883031F778063008C2614 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		219883071F779F94008C2614 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		219883091F77A7B2008C2614 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		2198830B1F77AE75008C2614 /* StringFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				215B79461F73615D0012D944 /* HTTPService.swift */,
 				215CE4F61F775A8A00B1F649 /* UrlFactory.swift */,
 				219883071F779F94008C2614 /* ImageLoader.swift */,
+				2198830B1F77AE75008C2614 /* StringFactory.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				215BF0291F76254C005DDB68 /* DetailPhotoTableViewCell.swift in Sources */,
 				2198830A1F77A7B2008C2614 /* UIViewController+Extension.swift in Sources */,
 				215CE4F71F775A8A00B1F649 /* UrlFactory.swift in Sources */,
+				2198830C1F77AE75008C2614 /* StringFactory.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
 				215DCAE61F753CFA0032CE39 /* DetailViewController.swift in Sources */,
 				219883041F778063008C2614 /* UIImage+Extension.swift in Sources */,

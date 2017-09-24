@@ -76,6 +76,11 @@ extension ViewController: UISearchBarDelegate {
                     self.alertMessage("알림", message: status!)
                 } else {
                     DispatchQueue.main.async {
+                        guard self.textSearchViewModel.numberOfItem != 0 else {
+                            self.alertMessage("알림", message: StringFactory().getTextSeachableNone())
+                            return
+                        }
+                        
                         self.tableView.setContentOffset(CGPoint.zero, animated: false)
                         self.tableView.reloadData()
                     }
