@@ -16,9 +16,8 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photoImageView.loadImage(
-            urlString: photoViewModel.photoModel?.imageUrl,
-            completionHandler: { (image) in
+        if let urlString = photoViewModel.photoModel?.imageUrl {
+            ImageLoader.sharedLoader.downloadImageFrom(urlString: urlString, completionHandler: { (image) in
                 guard image != nil else {
                     return
                 }
@@ -26,7 +25,10 @@ class PhotoViewController: UIViewController {
                 if (image?.size.width)! > self.photoImageView.bounds.width ||
                     (image?.size.height)! > self.photoImageView.bounds.height {
                     self.photoImageView.image = image?.resizeImage(targetSize: self.photoImageView.bounds.size)
+                } else {
+                    self.photoImageView.image = image
                 }
-        })
+            })
+        }
     }
 }

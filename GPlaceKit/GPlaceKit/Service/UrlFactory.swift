@@ -25,9 +25,7 @@ class UrlFactory {
             return nil
         }
         
-        let testSize = CGSize(width: 100, height: 100)
         var baseUrl = "https://maps.googleapis.com/maps/api/place/photo?"
-        // test by jeanclad
         baseUrl.append("maxwidth=\(Int(size.width))&maxheight=\(Int(size.height))&")
         baseUrl.append("photoreference=\(reference!)&")
         baseUrl.append("key=\(apiKey)")

@@ -319,10 +319,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RYX-2X-jVC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.21960784310000001" green="0.72156862749999995" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RYX-2X-jVC" secondAttribute="trailing" id="4X0-yF-eS0"/>
                             <constraint firstItem="JZt-Q3-Czo" firstAttribute="top" secondItem="RYX-2X-jVC" secondAttribute="bottom" id="HNg-kC-foZ"/>

@@ -19,7 +19,9 @@ class DetailMapTableViewCell: UITableViewCell {
             
             let url = UrlFactory().getMapUrlFromCurrentScreen(lat: item.lat, lng: item.lng)
             if let urlString = url {
-                mapImageView.loadImage(urlString: urlString)
+                ImageLoader.sharedLoader.downloadImageFrom(urlString: urlString, completionHandler: { (image) in
+                    self.mapImageView.image = image
+                })
             }
         }
     }
