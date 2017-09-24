@@ -11,10 +11,11 @@ import UIKit
 public typealias successClosure = (Response) -> ()
 public typealias failureClosure = (Error) -> ()
 
-// TODO: 키교체
 let apiKey = "AIzaSyDvHzmSse2t1zJd4-idzQIDd-Wdf7PecdQ"
-//tour "AIzaSyD5A7JxIDSHIS3m_CkBJf_rdmiBXcKk5pI"
-//jeanclad "AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
+//tour
+//let apiKey = "AIzaSyD5A7JxIDSHIS3m_CkBJf_rdmiBXcKk5pI"
+//jeanclad
+//let apiKey = "AIzaSyCjonlfatxCINuBE9iogcYElYFl30-AgNs"
 
 fileprivate enum HTTPMethod: String {
     case GET = "GET"

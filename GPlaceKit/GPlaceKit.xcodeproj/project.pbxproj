@@ -33,6 +33,7 @@
 		219883011F778049008C2614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883001F778049008C2614 /* ViewController.swift */; };
 		219883041F778063008C2614 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883031F778063008C2614 /* UIImage+Extension.swift */; };
 		219883081F779F94008C2614 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883071F779F94008C2614 /* ImageLoader.swift */; };
+		2198830A1F77A7B2008C2614 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219883091F77A7B2008C2614 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		219883001F778049008C2614 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		219883031F778063008C2614 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		219883071F779F94008C2614 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		219883091F77A7B2008C2614 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				219883031F778063008C2614 /* UIImage+Extension.swift */,
+				219883091F77A7B2008C2614 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -260,7 +263,6 @@
 				TargetAttributes = {
 					215B791C1F7339CD0012D944 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4EZ44NJM6C;
 						ProvisioningStyle = Automatic;
 					};
 					215B79301F7339CD0012D944 = {
@@ -326,6 +328,7 @@
 				215BF0271F76139E005DDB68 /* DetailTitleTableViewCell.swift in Sources */,
 				219883011F778049008C2614 /* ViewController.swift in Sources */,
 				215BF0291F76254C005DDB68 /* DetailPhotoTableViewCell.swift in Sources */,
+				2198830A1F77A7B2008C2614 /* UIViewController+Extension.swift in Sources */,
 				215CE4F71F775A8A00B1F649 /* UrlFactory.swift in Sources */,
 				215B79211F7339CD0012D944 /* AppDelegate.swift in Sources */,
 				215DCAE61F753CFA0032CE39 /* DetailViewController.swift in Sources */,
@@ -474,7 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4EZ44NJM6C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GPlaceKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -488,7 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4EZ44NJM6C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GPlaceKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

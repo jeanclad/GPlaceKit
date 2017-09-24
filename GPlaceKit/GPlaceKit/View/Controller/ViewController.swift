@@ -73,10 +73,7 @@ extension ViewController: UISearchBarDelegate {
             
             textSearchViewModel.requestTextSearchItems(searchable: searchString!, completionHandler: {status in
                 if status != nil {
-                    // TODO: 메소드로 정리
-                    let alert = UIAlertController(title: "알림", message: status, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    self.alertMessage("알림", message: status!)
                 } else {
                     DispatchQueue.main.async {
                         self.tableView.setContentOffset(CGPoint.zero, animated: false)
@@ -84,10 +81,7 @@ extension ViewController: UISearchBarDelegate {
                     }
                 }
             }) { (error) in
-                // TODO: 메소드로 정리
-                let alert = UIAlertController(title: "알림", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self.alertMessage("알림", message: error.localizedDescription)
             }
         }
     }
