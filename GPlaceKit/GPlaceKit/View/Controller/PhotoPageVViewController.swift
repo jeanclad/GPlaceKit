@@ -43,7 +43,7 @@ class PhotoPageVViewController: UIPageViewController {
     }
 
     // MARK: Action
-    func closeButtonPressed(sender: UIButton) {
+    @objc func closeButtonPressed(sender: UIButton) {
         dismiss(animated: true)
     }
     
